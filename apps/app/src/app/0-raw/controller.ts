@@ -7,7 +7,6 @@ export class RawController {
 
   @Get(['/', 'index.html'])
   @Header('Content-type', 'text/html')
-  @Header('Content-Security-Policy', `require-trusted-types-for 'script';`)
   index(): string {
     return fs.readFileSync(__dirname + '/assets/index.html').toString();
   }
